@@ -1,0 +1,4 @@
+npm install #run this before it works
+Mongod --dbpath CM4025\lab-5-enterprise-websystems\DB #Run database before
+# Running server
+npm run-script development #Run server
