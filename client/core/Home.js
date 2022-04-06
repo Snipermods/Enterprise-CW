@@ -73,7 +73,7 @@ export default function Home(){
           <Typography variant="h6" className={classes.title}>
           <Link to="/users"> Users </Link>
           </Typography>
-          <Link to="/users"> Users </Link>
+          
           <CardMedia className={classes.media} image={myImg} title="Lucas The Spider"/>
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo: Lucas</Typography>
           <CardContent>
