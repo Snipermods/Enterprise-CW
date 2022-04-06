@@ -18,7 +18,7 @@ const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        <Link to="/"> Love-for-the-Uglies </Link>
+        <Link to="/"> Love-for-the-Uglies style={{ color: '#FFF' }} </Link>
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
