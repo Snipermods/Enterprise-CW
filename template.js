@@ -15,6 +15,9 @@ export default ({markup, css}) => {
                 text-decoration: none;
                 color: #061d95
               }
+              h6{
+                color: #ffffff
+              }
           </style>
         </head>
         <body>
