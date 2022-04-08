@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import myImg from './../assets/images/Lucas_the_Spider(high res).jpg'
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
+import GitComments from '../components/GitComments'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -82,6 +83,15 @@ export default function Home(){
               <div>
               {jokes.joke}
               </div>
+
+            </Typography>
+
+            <Typography variant="body1" component="p">
+              Any Issues Tell Me About Them! :
+              <div>
+              <GitComments/>
+              </div>
+              
             </Typography>
           </CardContent>
         </Card>
