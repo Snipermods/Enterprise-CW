@@ -14,7 +14,7 @@ import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
 import {listadmin} from './api-user.js'
 import auth from './../auth/auth-helper'
-import DeleteUser from './DeleteUser'
+import AdminDeleteUser from './AdminDeleteUser'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -70,7 +70,7 @@ export default function Users({ match }) {
                       <ListItemText primary={"Administrator: " + item.admin}/>
                       
                       <ListItemSecondaryAction>
-                      <DeleteUser userId={users._id}/>
+                      <AdminDeleteUser userId={users._id}/>
                       <IconButton>
                           <ArrowForward/>
                       </IconButton>
