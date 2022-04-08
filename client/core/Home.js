@@ -86,13 +86,13 @@ export default function Home(){
 
             </Typography>
 
-            <Typography variant="body1" component="p">
+            
               Any Issues Tell Me About Them! :
               <div>
               <GitComments/>
               </div>
               
-            </Typography>
+            
           </CardContent>
         </Card>
     )
