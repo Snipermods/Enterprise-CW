@@ -89,6 +89,7 @@ export default function Home(){
             Any Issues Tell Me About Them! :
               
               <GitComments/>
+              
           </CardContent>
         </Card>
     )
