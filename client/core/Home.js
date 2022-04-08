@@ -88,11 +88,11 @@ export default function Home(){
 
             
               Any Issues Tell Me About Them! :
-              <div>
-              <GitComments/>
-              </div>
               
-              </Typography>
+              <GitComments/>
+              
+              
+            </Typography>
           </CardContent>
         </Card>
     )
