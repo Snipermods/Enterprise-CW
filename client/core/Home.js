@@ -78,7 +78,7 @@ export default function Home(){
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo: Lucas</Typography>
           <CardContent>
             <Typography variant="body1" component="p">
-              Welcome to home page.
+              Welcome to the home page.
               <div>
               {jokes.joke}
               </div>
