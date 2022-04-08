@@ -1,6 +1,6 @@
-import React, {component} from 'react'
+import React, {Component} from 'react'
 
-export default class GitComments extends component {
+export default class GitComments extends Component {
     constructor(props){
         super(props);
         this.commentBox = React.createRef();
