@@ -69,6 +69,7 @@ export default function Users({ match }) {
                       <ListItemText primary={"Administrator: " + item.admin}/>
                       
                       <ListItemSecondaryAction>
+                      <DeleteUser userId={user._id}/>
                       <IconButton>
                           <ArrowForward/>
                       </IconButton>
