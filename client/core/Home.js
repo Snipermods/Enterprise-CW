@@ -82,17 +82,13 @@ export default function Home(){
               Welcome to the home page.
               <div>
               {jokes.joke}
-              </div>
+              </div> 
+             
+            </Typography>
 
-            
-
-            
-              Any Issues Tell Me About Them! :
+            Any Issues Tell Me About Them! :
               
               <GitComments/>
-              
-              
-            </Typography>
           </CardContent>
         </Card>
     )
