@@ -84,7 +84,7 @@ export default function Home(){
               {jokes.joke}
               </div>
 
-            </Typography>
+            
 
             
               Any Issues Tell Me About Them! :
@@ -92,7 +92,7 @@ export default function Home(){
               <GitComments/>
               </div>
               
-            
+              </Typography>
           </CardContent>
         </Card>
     )
