@@ -19,8 +19,8 @@ const create = async (req, res) => {
 
 const list = async (req, res) => {
   try {
-    let users = await User.find().select('name email updated created')
-    res.json(users)
+    let UserComments = await userComments.find().select('name userComment timestamp _id')
+    res.json(UserComments)
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)
@@ -41,10 +41,8 @@ const read = (req, res) => {
 
 export default {
   create,
-  userByID,
+  
   read,
   list,
-  listadmin,
-  remove,
-  update
+ 
 }
