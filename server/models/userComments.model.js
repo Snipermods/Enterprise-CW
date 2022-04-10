@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
 
-const UserSchema = new mongoose.Schema({
+const UserComments = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
@@ -18,6 +18,6 @@ const UserSchema = new mongoose.Schema({
 })
 
 
-const userModel = mongoose.model('User', UserSchema);
-userModel.createIndexes();
-export default userModel
+const userComments = mongoose.model('userComments', UserComments);
+userComments.model.createIndexes();
+export default userComments
