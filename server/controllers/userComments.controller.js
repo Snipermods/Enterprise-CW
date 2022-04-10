@@ -1,13 +1,14 @@
-import User from '../models/user.model'
+import UserComments from '../models/userComments.model'
 import extend from 'lodash/extend'
 import errorHandler from './../helpers/dbErrorHandler'
+import userComments from '../models/userComments.model'
 
 const create = async (req, res) => {
-  const user = new User(req.body)
+  const UserComments = new userComments(req.body)
   try {
-    await user.save()
+    await UserComments.save()
     return res.status(200).json({
-      message: "Successfully signed up!"
+      message: "User Comments has been Created Succesfully!"
     })
   } catch (err) {
     return res.status(400).json({
