@@ -13,6 +13,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import MainRouter from './../client/MainRouter'
 import { StaticRouter } from 'react-router-dom'
+import commentsRoutes from './routes/comments.routes'
 
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles'
 import theme from './../client/theme'
@@ -45,6 +46,7 @@ app.use(cors())
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', authRoutes)
 app.use('/', userRoutes)
+app.use('/', commentsRoutes)
 // proxy
 app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
 
