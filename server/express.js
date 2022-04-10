@@ -8,6 +8,7 @@ import helmet from 'helmet'
 import Template from './../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
+import userCommentsRoutes from './routes/userComments.routes'
 // modules for server side rendering
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
@@ -45,6 +46,7 @@ app.use(cors())
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', authRoutes)
 app.use('/', userRoutes)
+app.use('/', userCommentsRoutes)
 // proxy
 app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
 
