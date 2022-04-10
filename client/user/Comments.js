@@ -56,18 +56,10 @@ export default function Users() {
          {users.map((item, i) => {
           return <Link to={"/user/" + item._id} key={i}>
                     <ListItem button>
-                      <ListItemAvatar>
-                        <Avatar>
-                          <Person/>
-                        </Avatar>
-                      </ListItemAvatar>
+                      
                       <ListItemText primary={item.comments}/>
                       <button size = "small" >Reply!</button>
-                      <ListItemSecondaryAction>
-                      <IconButton>
-                          <ArrowForward/>
-                      </IconButton>
-                      </ListItemSecondaryAction>
+                      
                     </ListItem>
                  </Link>
                })
