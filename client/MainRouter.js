@@ -9,7 +9,7 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-//import UserComments from '.userComments.model'
+import Comments from './user/comments'
 
 const MainRouter = () => {
     return (<div>
@@ -22,7 +22,7 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
-        
+        <Route path="/Comments" component={Comments}/>
       </Switch>
     </div>)
 }
