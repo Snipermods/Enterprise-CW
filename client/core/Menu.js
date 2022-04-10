@@ -51,6 +51,10 @@ const Menu = withRouter(({history}) => (
             }}>Sign out</Button>
         </span>)
       }
+      <Link to="/Comments">
+            <Button style={isActive(history, "/Comments")}>comments
+            </Button>
+          </Link>
     </Toolbar>
   </AppBar>
 ))
