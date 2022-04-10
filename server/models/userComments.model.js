@@ -7,39 +7,15 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     required: 'Name is required'
   },
-  email: {
-    index: true,
-    type: String,
-    trim: true,
-    unique: true,
-    match: [/.+\@.+\..+/, 'Please fill a valid email address'],
-    required: 'Email is required'
-  },
-  about: {
+  userComment: {
     type: String,
     trim: true,
   },
-  profileclicks: {
-    type: Number,
-    default: 0,
-    min: 0,
-  },
-  admin: {
-  	type: Boolean,
-  	default: false
-  },
-  hashed_password: {
-    type: String,
-    required: "Password is required"
-  },
-  salt: String,
-  updated: Date,
-    created: {
-      type: Date,
-      default: Date.now
-    }
+  timestamp: {
+      type : Date,
+      trim : true //removes whitespace
+  }
 })
-
 
 
 const userModel = mongoose.model('User', UserSchema);
