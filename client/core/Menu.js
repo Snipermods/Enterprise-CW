@@ -46,15 +46,16 @@ const Menu = withRouter(({history}) => (
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
+          <Link to="/Comments">
+            <Button style={isActive(history, "/Comments")}>comments
+            </Button>
+          </Link>
           <Button color="inherit" onClick={() => {
               auth.clearJWT(() => history.push('/'))
             }}>Sign out</Button>
         </span>)
       }
-      <Link to="/Comments">
-            <Button style={isActive(history, "/Comments")}>comments
-            </Button>
-          </Link>
+      
     </Toolbar>
   </AppBar>
 ))
