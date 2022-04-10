@@ -9,7 +9,7 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-import Comments from './user/comments'
+import Comments from './user/Comments'
 
 const MainRouter = () => {
     return (<div>
