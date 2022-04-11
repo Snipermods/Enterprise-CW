@@ -103,7 +103,7 @@ export default function createComments() {
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
-        console.log(comments);
+        console.log("ERROR ", comments);
       }
     })
     //location.reload();
