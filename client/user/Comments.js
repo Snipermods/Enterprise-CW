@@ -162,7 +162,7 @@ export default function createComments() {
           
          }
          
-         <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/><br/>   
+         <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comment} onChange={handleChange('comments')} margin="normal"/><br/>   
          {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
