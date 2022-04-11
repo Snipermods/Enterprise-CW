@@ -99,9 +99,11 @@ export default function createComments() {
     }
     create({t: jwt.token},comments).then((data) => {
       if (data.error) {
+        console.log(comments);
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
+        console.log(comments);
       }
     })
     location.reload();
@@ -167,13 +169,15 @@ export default function createComments() {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
               {values.error}</Typography>)
+              
           }
+          
           <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-         
+          
           </List>
+          
     </Paper>
 
-      
         
       
     )
