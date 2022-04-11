@@ -1,6 +1,7 @@
 import express from 'express'
 import commentsCtrl from '../controllers/comments.controller'
 import authCtrl from '../controllers/auth.controller'
+import userCtrl from '../controllers/auth.controller'
 
 const router = express.Router()
 
@@ -10,8 +11,13 @@ router.route('/api/comments')
 
   //authCtrl.requireSignin,
 
+router.route('/api/commentid/:userid/:commentid')
+  
+
+  .delete(authCtrl.requireSignin,authCtrl.hasAuthorization, commentsCtrl.remove)
 
 
-
+router.param('userid', userCtrl.userByID)
+router.param('commentid', commentsCtrl.commentByID)
 
 export default router
