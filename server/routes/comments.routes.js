@@ -18,6 +18,6 @@ router.route('/api/commentid/:userid/:commentid')
 
 
 router.param('userid', userCtrl.userByID)
-router.param('commentid', commentsCtrl.commentByID)
+router.param('commentid', commentsCtrl.commentByID)//comment
 
 export default router
