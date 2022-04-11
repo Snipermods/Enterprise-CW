@@ -101,6 +101,9 @@ export default function Users() {
              }
         </List>
         
+        <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
+
+
       </Paper>
 
       
