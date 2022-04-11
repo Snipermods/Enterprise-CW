@@ -145,6 +145,7 @@ export default function createComments() {
                       <button size = "small" >Reply!</button>
                       
                     </ListItem>
+                    <DeleteUser userId={user._id}/>
 
   </div>  )})     
           
