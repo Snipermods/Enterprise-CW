@@ -17,6 +17,7 @@ router.route('/api/commentid/:userid/:commentid')
   .delete(authCtrl.requireSignin,authCtrl.hasAuthorization, commentsCtrl.remove)
 
 
-
+router.param('userid', userCtrl.userByID)
+router.param('commentid', userCtrl.userByID)
 
 export default router
