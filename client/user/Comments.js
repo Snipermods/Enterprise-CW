@@ -14,7 +14,7 @@ import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
 import {list} from './api-user.js'
 import auth from './../auth/auth-helper'
-
+import { list } from './api-user.js'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -58,8 +58,9 @@ const useStyles = makeStyles(theme => ({
     }
   }))
 
-export default function Users() {
+export default function createComments() {
   const classes = useStyles()
+  const [comments, createComments] = useState([])
   const jwt = auth.isAuthenticated()
 
   
@@ -76,8 +77,8 @@ export default function Users() {
   const clickSubmit = () => {
     const comments = {
       comments: values.comments || undefined,
-      name: auth.isAuthenticated().user.name, //gets the user name
-      userID: auth.isAuthenticated().user._id  //gets the users ID
+      name: auth.isAuthenticated().user.name, 
+      userID: auth.isAuthenticated().user._id  
     }
     create({t: jwt.token},comments).then((data) => {
       if (data.error) {
@@ -100,7 +101,7 @@ export default function Users() {
       if (data && data.error) {
         console.log(data.error)
       } else {
-        setUsers(data)
+        createComments(data)
       }
     })
 
@@ -116,19 +117,20 @@ export default function Users() {
           Comments
         </Typography>
         <List dense>
-         {users.map((item, i) => {
-          return <Link to={"/user/" + item._id} key={i}>
+         {comments.map((item, i) => {
+
+          return (<div>
                     <ListItem button>
                       
                       <ListItemText primary={item.comments}/>
                       <button size = "small" >Reply!</button>
                       
                     </ListItem>
-                 </Link>
+                
                  
-               })
-             }
-        </List>
+               
+             
+       
         
         <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/><br/>   
         <br/> {
@@ -137,8 +139,10 @@ export default function Users() {
               {values.error}</Typography>)
           }
           <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-
-      </Paper>
+  </div>  )})     
+          
+         } </List>
+    </Paper>
 
       
         
