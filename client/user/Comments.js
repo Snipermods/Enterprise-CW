@@ -30,6 +30,7 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import auth from '../auth/auth-helper.js'
 
 
 
@@ -62,6 +63,35 @@ const useStyles = makeStyles(theme => ({
 export default function Users() {
   const classes = useStyles()
   const [users, setUsers] = useState([])
+
+  const [values, setValues] = useState({
+      comments: '',
+      open: false,
+      error: ''
+  })
+
+
+const handleChange = comments => event => {
+    setValues({ ...values, [comments]: event.target.value })
+
+}
+
+const clickSubmit = () => {
+    const comments = {
+        comments: values.comments || undefined,
+        name: auth.isAuthenticated().user.name,
+        userID: isAuthenticated().user.id
+    }
+}
+
+create({t: jwt.token},comments).then((data) => {
+if(data.error){
+    setValues({ ...values, error: data.error})
+}else {
+    setValues({ ...values, error: '',open: true})
+}
+})
+location.reload();
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -101,7 +131,7 @@ export default function Users() {
              }
         </List>
         
-        <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
+        <TextField id="inputbox" label="Inputbox" className={classes.textField} value={values.comments} onChange={handleChange('Comments')} margin="normal"/><br/>
 
 
       </Paper>
