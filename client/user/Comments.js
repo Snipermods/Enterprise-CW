@@ -104,7 +104,7 @@ export default function createComments() {
         setValues({ ...values, error: '', open: true})
       }
     })
-    //location.reload();
+    location.reload();
   }
   
   
