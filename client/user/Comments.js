@@ -22,7 +22,7 @@ import TextField from '@material-ui/core/TextField'
 
 import Icon from '@material-ui/core/Icon'
 
-import {create} from './api-user.js'
+import {create} from './commentsapi'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
