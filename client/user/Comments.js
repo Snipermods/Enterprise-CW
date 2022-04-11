@@ -12,9 +12,8 @@ import Typography from '@material-ui/core/Typography'
 import ArrowForward from '@material-ui/icons/ArrowForward'
 import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
-import {list} from './api-user.js'
+import {list} from './commentsapi.js'
 import auth from './../auth/auth-helper'
-
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -69,6 +68,24 @@ export default function createComments() {
       open: false,
       error: ''
   })
+
+  useEffect(() => {
+    const abortController = new AbortController()
+    const signal = abortController.signal
+
+    list(signal).then((data) => {
+      if (data && data.error) {
+        console.log(data.error)
+      } else {
+        setUsers(data)
+      }
+    })
+
+    return function cleanup(){
+      abortController.abort()
+    }
+  }, [])
+
   
   const handleChange = comments => event => {
       setValues({ ...values, [comments]: event.target.value})
@@ -139,6 +156,8 @@ export default function createComments() {
               {values.error}</Typography>)
           }
           <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
+
+
   </div>  )})     
           
          } </List>
