@@ -77,7 +77,7 @@ export default function createComments() {
       if (data && data.error) {
         console.log(data.error)
       } else {
-        setUsers(data)
+        createComments(data)
       }
     })
 
