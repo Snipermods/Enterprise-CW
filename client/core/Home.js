@@ -86,9 +86,6 @@ export default function Home(){
              
             </Typography>
 
-            Any Issues Tell Me About Them! :
-              
-              <GitComments/>
               
           </CardContent>
         </Card>
