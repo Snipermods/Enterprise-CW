@@ -6,9 +6,9 @@ const router = express.Router()
 
 router.route('/api/comments')
   .get( commentsCtrl.list)
-  .post(authCtrl.requireSignin, commentsCtrl.create)
+  .post(commentsCtrl.create)
 
-
+  //authCtrl.requireSignin
 
 
 
