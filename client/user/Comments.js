@@ -131,7 +131,7 @@ export default function createComments() {
 
   function commentremove (comment){
     remove(comment, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data)=>{
-      location.reload
+      location.reload();
     })
 
   }
