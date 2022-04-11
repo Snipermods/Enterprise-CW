@@ -33,7 +33,7 @@ const remove = async (req, res) => {
   
   try {
     let comment = req.comment
-    let commentDelete = await comment.remove
+    let commentDelete = await comment.remove()
     res.json(commentDelete)
   } catch (err) {
     return res.status(400).json({
