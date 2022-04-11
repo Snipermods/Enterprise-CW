@@ -26,9 +26,29 @@ const list = async (signal) => {
     }
   }
   
+  const remove = async (commentid, credentials, userid) => {
+    try{
+    console.log("deleted shiz", commentid);
+    let response = await fetch('/api/commentsid/' + userid + "/" + commentid,{
+      method: 'DELETE',
+      headers: {
+
+        'Accept': 'application/json',
+        
+        'Content-Type': 'application/json',
+      
+        'Authorization': 'Bearer ' + credentials.t
+    }
+  })
+  return await response.json()
+  } catch(err) {
+    console.log(err)
+  }}
+  
   export {
     list,
-    create
+    create,
+    remove
     
   }
 
