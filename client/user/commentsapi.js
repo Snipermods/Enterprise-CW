@@ -29,7 +29,7 @@ const list = async (signal) => {
   const remove = async (commentid, credentials, userid) => {
     try{
     console.log("deleted shiz", commentid);
-    let response = await fetch('/api/commentsid/' + userid + "/" + commentid,{
+    let response = await fetch('/api/commentid/' + userid + "/" + commentid,{
       method: 'DELETE',
       headers: {
 
