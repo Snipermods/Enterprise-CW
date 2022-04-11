@@ -97,7 +97,7 @@ export default function createComments() {
       name: auth.isAuthenticated().user.name, 
       userID: auth.isAuthenticated().user._id  
     }
-    create({t: jwt.token},comments).then((data) => {
+    create(comments).then((data) => {
       if (data.error) {
         console.log(comments);
         setValues({ ...values, error: data.error})
