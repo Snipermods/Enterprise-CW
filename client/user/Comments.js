@@ -106,7 +106,7 @@ export default function createComments() {
         console.log("2", comment);
       }
     })
-    //location.reload();
+    location.reload();
   }
   
   
