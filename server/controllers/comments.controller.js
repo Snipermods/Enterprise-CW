@@ -42,21 +42,21 @@ const remove = async (req, res) => {
   }
 }
 
-const commentByID = async (req, res, next, id) => {
-  try {
-    let comment = await comments.findById(id)
-    if (!comment)
-      return res.status('400').json({
-        error: "comment not found"
-      })
-    req.comment = comment
-    next()
-  } catch (err) {
-    return res.status('400').json({
-      error: "Could not retrieve comment"
-    })
-  }
-}
+// const commentByID = async (req, res, next, id) => {
+//   try {
+//     let comment = await comments.findById(id)
+//     if (!comment)
+//       return res.status('400').json({
+//         error: "comment not found"
+//       })
+//     req.comment = comment
+//     next()
+//   } catch (err) {
+//     return res.status('400').json({
+//       error: "Could not retrieve comment"
+//     })
+//   }
+// }
     
 
 export default {
