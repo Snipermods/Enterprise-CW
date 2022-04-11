@@ -122,7 +122,7 @@ export default function createComments() {
           return (<div>
                     <ListItem button>
                       
-                      <ListItemText primary={item.comments}/>
+                      <ListItemText primary={item.comment}/>
                       <button size = "small" >Reply!</button>
                       
                     </ListItem>
