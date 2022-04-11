@@ -13,8 +13,7 @@ import ArrowForward from '@material-ui/icons/ArrowForward'
 import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
 import {list} from './api-user.js'
-
-
+import auth from './../auth/auth-helper'
 
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -61,8 +60,38 @@ const useStyles = makeStyles(theme => ({
 
 export default function Users() {
   const classes = useStyles()
-  const [users, setUsers] = useState([])
+  const jwt = auth.isAuthenticated()
 
+  
+  const [values, setValues] = useState({
+      comments: '',
+      open: false,
+      error: ''
+  })
+  
+  const handleChange = comments => event => {
+      setValues({ ...values, [comments]: event.target.value})
+  }
+  
+  const clickSubmit = () => {
+    const comments = {
+      comments: values.comments || undefined,
+      name: auth.isAuthenticated().user.name, //gets the user name
+      userID: auth.isAuthenticated().user._id  //gets the users ID
+    }
+    create({t: jwt.token},comments).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error})
+      } else {
+        setValues({ ...values, error: '', open: true})
+      }
+    })
+    location.reload();
+  }
+  
+  
+  
+  
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
@@ -101,8 +130,13 @@ export default function Users() {
              }
         </List>
         
-            
-
+        <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/><br/>   
+        <br/> {
+            values.error && (<Typography component="p" color="error">
+              <Icon color="error" className={classes.error}>error</Icon>
+              {values.error}</Typography>)
+          }
+          <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
 
       </Paper>
 
