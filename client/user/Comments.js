@@ -87,23 +87,23 @@ export default function createComments() {
   }, [])
 
   
-  const handleChange = comments => event => {
-      setValues({ ...values, [comments]: event.target.value})
+  const handleChange = comment => event => {
+      setValues({ ...values, [comment]: event.target.value})
   }
   
   const clickSubmit = () => {
-    const comments = {
-      comments: values.comments || undefined,
+    const comment = {
+      comment: values.comments || undefined,
       name: auth.isAuthenticated().user.name, 
-      userID: auth.isAuthenticated().user._id  
+      userid: auth.isAuthenticated().user._id  
     }
-    create(comments).then((data) => {
+    create(comment).then((data) => {
       if (data.error) {
-        console.log("1", comments);
+        console.log("1", comment);
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
-        console.log("2", comments);
+        console.log("2", comment);
       }
     })
     //location.reload();
@@ -164,7 +164,7 @@ export default function createComments() {
           
          }
          
-         <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comment} onChange={handleChange('comments')} margin="normal"/><br/>   
+         <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/><br/>   
          {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>

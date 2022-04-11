@@ -12,6 +12,10 @@ const commentsSchema = new mongoose.Schema({
     type: String,
     trim: true
 
+  },
+  userid:{
+    type: String,
+    trim: true
   }
 })
 
