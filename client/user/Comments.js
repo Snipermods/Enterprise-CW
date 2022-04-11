@@ -99,11 +99,11 @@ export default function createComments() {
     }
     create(comments).then((data) => {
       if (data.error) {
-        console.log(comments);
+        console.log("1", comments);
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
-        console.log("ERROR ", comments);
+        console.log("2", comments);
       }
     })
     //location.reload();
