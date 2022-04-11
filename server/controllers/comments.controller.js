@@ -32,7 +32,7 @@ const list = async (req, res) => {
 const remove = async (req, res) => {
   
   try {
-    let comment = req.Comments
+    let comment = req.comment
     let commentDelete = await comment.remove
     res.json(commentDelete)
   } catch (err) {
