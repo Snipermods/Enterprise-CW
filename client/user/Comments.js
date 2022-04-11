@@ -145,20 +145,6 @@ export default function createComments() {
                       <button size = "small" >Reply!</button>
                       
                     </ListItem>
-                
-                 
-               
-             
-       
-        
-        {/* <TextField id="inputbox" label="inputbox" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/><br/>   
-         {
-            values.error && (<Typography component="p" color="error">
-              <Icon color="error" className={classes.error}>error</Icon>
-              {values.error}</Typography>)
-          }
-          <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button> */}
-
 
   </div>  )})     
           
