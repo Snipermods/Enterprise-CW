@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import ArrowForward from '@material-ui/icons/ArrowForward'
 import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
-import {list} from './commentsapi.js'
+import {list, remove} from './commentsapi.js'
 import auth from './../auth/auth-helper'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
@@ -129,6 +129,13 @@ export default function createComments() {
     }
   }, [])
 
+  function commentremove (comment){
+    remove(comment, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data)=>{
+      location.reload
+    })
+
+  }
+
 
     return (
       <Paper className={classes.root} elevation={4}>
@@ -142,7 +149,7 @@ export default function createComments() {
                     <ListItem button>
                       
                       <ListItemText primary={item.comment}/>
-                      <button size = "small" >Reply!</button>
+                      <button size = "small" onClick={()=> commentremove(item._id)} >Delete</button>
                       
                     </ListItem>
                     
