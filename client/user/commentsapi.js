@@ -11,6 +11,7 @@ const list = async (signal) => {
   }
   const create = async (comments) => {
     try {
+        console.log(comments);
         let response = await fetch('/api/comments/', {
           method: 'POST',
           headers: {
